@@ -9,11 +9,14 @@
         console.log("Projects Page");
     } else if (document.getElementById("contact") != null) {
         console.log("Contact Page");
-        var checkMeOut;
+        //declare variables and create a reference to form elements
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var checkMeOut= document.getElementById("checkMeOut");
+        var submitButton = document.getElementById("submitButton");
+        submitButton.pre
 
-        checkMeOut = document.getElementById("checkMeOut");
-        console.log(checkMeOut);
-
+        // checkbox event listener
         checkMeOut.addEventListener("change", function () {
 
             if (checkMeOut.checked) {
@@ -21,8 +24,15 @@
             } else {
                 console.log("It's unchecked");
             } // end else
-
         }); // end addEventListener
+        
+        submitButton.addEventListener("click", function(event){
+            event.preventDefault();
+            console.log("Email: " + email.value);
+            console.log("Password: " + password.value);
+        });
+        
+        
     } // end else if
 
     /* Ari's Solution
